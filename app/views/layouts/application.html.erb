@@ -9,7 +9,9 @@
 <body>
 
 <%= form_tag search_path, :method => :get do%>
+  <%= label_tag :q, "Search:" %>
   <%= text_field_tag :q, params[:q] %>
+  <%= link_to("[x]", root_path) if params[:q] %>
 <% end %>
 
 <%= yield %>
